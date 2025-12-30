@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Case Closed with E911Delivery.com</title>
+    <meta name="description"
+        content="E911Delivery.com™ — Process Serving & Investigations. Call/Text 423.825.9800. Unfiltered Investigations LLC." />
+    <meta name="theme-color" content="#0b0b0b" />
+    <style>
+        :root {
+            --bg: #0b0b0b;
+            --card: #121212;
+            --text: #f3f4f6;
+            --muted: #b9bcc5;
+            --line: rgba(255, 255, 255, .12);
+            --shadow: 0 14px 40px rgba(0, 0, 0, .45);
+            --radius: 18px;
+            --max: 1040px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            background: radial-gradient(1200px 600px at 70% -10%, rgba(255, 255, 255, .10), transparent 55%),
+                radial-gradient(900px 500px at 20% 110%, rgba(255, 255, 255, .08), transparent 55%),
+                var(--bg);
+            color: var(--text);
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+            line-height: 1.45;
+        }
+
+        a {
+            color: inherit
+        }
+
+        .wrap {
+            max-width: var(--max);
+            margin: 0 auto;
+            padding: 18px 16px 56px
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background: rgba(11, 11, 11, .70);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .nav {
+            max-width: var(--max);
+            margin: 0 auto;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 0;
+            text-decoration: none;
+        }
+
+        .mark {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, .06);
+            display: grid;
+            place-items: center;
+            flex: 0 0 auto;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, .35);
+        }
+
+        .mark span {
+            font-weight: 800;
+            letter-spacing: .2px;
+            font-size: 14px;
+        }
+
+        .brand .txt {
+            min-width: 0
+        }
+
+        .brand strong {
+            display: block;
+            font-size: 14px;
+            line-height: 1.1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        .brand small {
+            display: block;
+            color: var(--muted);
+            font-size: 12px;
+            margin-top: 1px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex: 0 0 auto
+        }
+
+        .btn {
+            appearance: none;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, .06);
+            color: var(--text);
+            padding: 10px 12px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, .35);
+            transition: transform .06s ease, background .2s ease, border-color .2s ease;
+            white-space: nowrap;
+        }
+
+        .btn:active {
+            transform: translateY(1px)
+        }
+
+        .btn.primary {
+            background: rgba(255, 255, 255, .14);
+            border-color: rgba(255, 255, 255, .22)
+        }
+
+        .btn.primary:hover {
+            background: rgba(255, 255, 255, .18)
+        }
+
+        .btn.ghost {
+            background: transparent
+        }
+
+        .btn.ghost:hover {
+            background: rgba(255, 255, 255, .05)
+        }
+
+        .hero {
+            padding: 18px 0 10px;
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            gap: 18px;
+            align-items: center;
+        }
+
+        @media (max-width: 860px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding-top: 16px
+            }
+
+            .actions .btn span.label {
+                display: none
+            }
+        }
+
+        .card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .03));
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 18px;
+        }
+
+        .logo {
+            width: 100%;
+            border-radius: 16px;
+            border: 1px solid var(--line);
+            background: rgba(0, 0, 0, .35);
+            overflow: hidden;
+            display: block;
+        }
+
+        .kicker {
+            color: var(--muted);
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            font-size: 12px;
+            margin: 0 0 10px;
+        }
+
+        h1 {
+            margin: 0 0 10px;
+            font-size: clamp(28px, 3.8vw, 44px);
+            line-height: 1.05;
+            letter-spacing: -.02em;
+        }
+
+        .lead {
+            margin: 0 0 16px;
+            color: var(--muted);
+            font-size: 16px;
+            max-width: 52ch;
+        }
+
+        .pillrow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 0 0 16px
+        }
+
+        .pill {
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, .05);
+            color: var(--text);
+            padding: 7px 10px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .ctaRow {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-top: 14px;
+        }
+
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr
+            }
+        }
+
+        h2 {
+            margin: 0 0 10px;
+            font-size: 22px;
+            letter-spacing: -.01em
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        ul {
+            margin: 10px 0 0;
+            padding-left: 18px;
+            color: var(--muted)
+        }
+
+        li {
+            margin: 6px 0
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--line);
+            margin: 16px 0;
+        }
+
+        .contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 14px;
+        }
+
+        @media (max-width: 900px) {
+            .contact {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        label {
+            font-size: 13px;
+            color: var(--muted);
+            font-weight: 700
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px 12px;
+            border-radius: 12px;
+            border: 1px solid var(--line);
+            background: rgba(0, 0, 0, .25);
+            color: var(--text);
+            outline: none;
+        }
+
+        textarea {
+            min-height: 110px;
+            resize: vertical
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: rgba(255, 255, 255, .28)
+        }
+
+        .fineprint {
+            margin-top: 12px;
+            color: rgba(255, 255, 255, .55);
+            font-size: 12px;
+        }
+
+        footer {
+            margin-top: 18px;
+            padding-top: 16px;
+            border-top: 1px solid var(--line);
+            color: rgba(255, 255, 255, .55);
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sticky header -->
+    <header>
+        <!-- <div class="nav">
+            <a class="brand" href="#top" aria-label="E911Delivery.com Home">
+                <div class="mark" aria-hidden="true"><span>E911</span></div>
+                <div class="txt">
+                    <strong>E911Delivery.com™</strong>
+                    <small>Unfiltered Investigations LLC</small>
+                </div>
+            </a>
+
+            <div class="actions">
+                <a class="btn ghost" href="#services"><span class="label">Services</span></a>
+                <a class="btn ghost" href="#contact"><span class="label">Contact</span></a>
+                <a class="btn primary" href="tel:+14238259800" aria-label="Call 423.825.9800">
+                    Call <span class="label">423.825.9800</span>
+                </a>
+            </div>
+        </div> -->
+    </header>
+
+    <main id="top" class="wrap">
+        <!-- Hero -->
+        <section class="hero" aria-label="Hero">
+            <div class="card" aria-label="Logo">
+                <!-- Put the attached file in the same folder as this HTML and name it exactly as below -->
+                <img class="logo" src="E911Delivery-com-logo.png" alt="E911Delivery.com logo" />
+                <!-- <p class="fineprint">
+                    Tip: If the logo filename differs, update the <code>src</code> above.
+                </p> -->
+            </div>
+            <div class="card">
+                <!-- <p class="kicker">Case Closed</p> -->
+                <div class="divider"></div>
+                <h1 style="text-align: center;">Fast, professional services legal support and delivery needs <u>for
+                        anyone</u>.
+                </h1>
+                <!-- <p class="lead">
+                    <b>Unfiltered Investigations LLC</b> provides reliable Process Serving and <i><u>Boots on the
+                            ground</u></i> support
+                    Voice/Text
+                    <strong>423.825.9800</strong>.
+                </p> -->
+
+                <!-- <div class="pillrow" aria-label="Service tags">
+                    <span class="pill">Judicial appointed - Process Serving in TN</span>
+                    <span class="pill">Investigations</span>
+                    <span class="pill">Rush Options</span>
+                    <span class="pill">TN AL GA Support</span>
+                </div> -->
+
+                <!-- <div class="ctaRow">
+                    <a class="btn primary" href="tel:+14238259800">Tap to Call</a>
+                    <a class="btn"
+                        href="sms:+14238259800?&body=Hi%20E911Delivery.com%20%E2%80%94%20I%27d%20like%20help%20with%20a%20service%20request.%20">Text
+                        Us</a>
+                    <a class="btn ghost" href="#contact">Request a Quote</a>
+                </div> -->
+
+                <div class="divider"></div>
+            </div>
+
+
+        </section>
+
+        <!-- Services -->
+        <section id="services" class="grid" aria-label="Services">
+            <div class="card">
+                <h2 style="text-align: center;">
+                    <span>P</span><span style="font-size: 16px;">ROCESS</span>
+                    <span>S</span><span style="font-size: 16px;">ERVING</span>
+                </h2>
+                <p class="muted" style="margin:0">
+                    Timely, accurate service with clear documentation and status updates.
+                </p>
+                <ul>
+                    <li>Routine and rush service options</li>
+                    <li>Address verification / basic locate</li>
+                    <li>Affidavit / return-ready documentation</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2 style="text-align: center;">
+                    <span>C</span><span style="font-size: 16px;">ASE</span>
+                    <span>C</span><span style="font-size: 16px;">LOSED</span>
+                </h2>
+                <p class=" muted" style="margin:0">
+                    Boots on the ground to help you move forward.
+                </p>
+                <ul>
+                    <li>Skip tracing support</li>
+                    <li>Field checks / basic verifications</li>
+                    <li>Documentation and reporting</li>
+                    <li>Body Cam video available</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2 style="text-align: center;">
+                    <span>D</span><span style="font-size: 16px;">ELIVERY</span>
+                    <span>S</span><span style="font-size: 16px;">UPPORT</span>
+                </h2>
+                <p class="muted" style="margin:0">
+                    When time matters, we support urgent pickup/drop-off needs.
+                </p>
+                <ul>
+                    <li>Time-sensitive courier runs</li>
+                    <li>Flexible scheduling</li>
+                    <li>Proof of drop-off available</li>
+                    <li>Near real-time updates</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" aria-label="Contact" style="margin-top:14px">
+            <div class="card">
+                <h2>Contact</h2>
+                <p class="muted" style="margin:0 0 12px">
+                    Call or text <strong>423.825.9800</strong>, or send a quick message below.
+                </p>
+
+                <!-- This form uses mailto so it works on basic hosting with no backend.
+             Replace EMAIL_HERE with your email address. -->
+                <form id="contactForm"
+                    action="mailto:CaseClosed@E911Delivery?subject=Service%20Request%20-%20E911Delivery.com"
+                    method="post" enctype="text/plain">
+                    <div class="contact">
+                        <div class="field">
+                            <label for="name">Name</label>
+                            <input id="name" name="Name" autocomplete="name" placeholder="Your name" />
+                        </div>
+                        <div class="field">
+                            <label for="phone">Phone</label>
+                            <input id="phone" name="Phone" autocomplete="tel" placeholder="Best callback number" />
+                        </div>
+                        <div class="field">
+                            <label for="email">Email (optional)</label>
+                            <input id="email" name="Email" autocomplete="email" placeholder="you@example.com" />
+                        </div>
+                        <div class="field">
+                            <label for="type">Request Type</label>
+                            <input id="type" name="Request Type" placeholder="How can we help?" />
+                        </div>
+                    </div>
+
+                    <div class="field" style="margin-top:12px">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="Message"
+                            placeholder="Tell us what you need, best time to call, location/county, deadlines, and any key details."></textarea>
+                    </div>
+
+                    <div class="ctaRow" style="margin-top:12px">
+                        <button class="btn primary" type="submit">Send Message</button>
+                        <a class="btn" href="tel:+14238259800">Call Now</a>
+                        <a class="btn ghost"
+                            href="sms:+14238259800?&body=Hi%20E911Delivery.com%20%E2%80%94%20I%27d%20like%20help%20with%20a%20service%20request.%20">Text
+                            Now</a>
+                    </div>
+
+                    <p class="fineprint">
+                        Note: The “Send Message” button opens your device’s email app (no server required).
+                        To enable web-form submissions directly, you’ll need a form service or backend.
+                    </p>
+                </form>
+                <p class="sub" style="margin-top:12px; color: red; text-align: center; font-size: x-large;">
+                    If you are in immediate danger or need emergency assistance, dial <b>911</b>.
+                </p>
+                <footer>
+                    <div style="font-size: xx-small;">© <span id="yr"></span> Unfiltered Investigations LLC</div>
+                    <!-- <div>E911Delivery.com™ · Phone: <a href="tel:+14238259800">423.825.9800</a></div> -->
+                </footer>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Set footer year
+        document.getElementById("yr").textContent = new Date().getFullYear();
+
+        // Improve mailto form by putting all fields into the body
+        // (works in many clients; some may ignore).
+        const form = document.getElementById("contactForm");
+        form.addEventListener("submit", function (e) {
+            const name = document.getElementById("name").value || "";
+            const phone = document.getElementById("phone").value || "";
+            const email = document.getElementById("email").value || "";
+            const type = document.getElementById("type").value || "";
+            const msg = document.getElementById("message").value || "";
+
+            const body =
+                "Name: " + name + "\n" +
+                "Phone: " + phone + "\n" +
+                "Email: " + email + "\n" +
+                "Request Type: " + type + "\n\n" +
+                "Message:\n" + msg + "\n";
+
+            // Replace any existing body parameter
+            const actionBase = form.getAttribute("action").split("&body=")[0];
+            form.setAttribute("action", actionBase + "&body=" + encodeURIComponent(body));
+        });
+    </script>
+</body>
+
+</html>
